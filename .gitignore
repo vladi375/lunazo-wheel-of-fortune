@@ -1,0 +1,36 @@
+# Dependencies and build output
+node_modules/
+dist/
+*.tsbuildinfo
+.vite/
+
+# Local environment
+.env
+.env.*
+!.env.example
+*.local
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Development checks and generated reports
+tests/
+test/
+__tests__/
+**/*.test.*
+**/*.spec.*
+scripts/
+playwright/
+playwright.config.*
+playwright-report/
+blob-report/
+test-results/
+coverage/
+.cache/
+
+# Local tooling metadata
+.codex/
+.agents/
+AGENTS.md
