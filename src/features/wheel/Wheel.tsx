@@ -74,7 +74,7 @@ export function Wheel({ onResult, buttonRef }: WheelProps) {
                 <div className='wheel__rotor' ref={rotorRef} aria-hidden='true'>
                     <img
                         className='wheel__disc'
-                        src={asset('wheel/disc.png')}
+                        src={asset('wheel/disc.webp')}
                         alt=''
                         draggable={false}
                         width={2000}
@@ -97,7 +97,7 @@ export function Wheel({ onResult, buttonRef }: WheelProps) {
                 </div>
                 <img
                     className='wheel__rim'
-                    src={asset('wheel/rim.png')}
+                    src={asset('wheel/rim.webp')}
                     alt=''
                     aria-hidden='true'
                     draggable={false}
@@ -116,7 +116,7 @@ export function Wheel({ onResult, buttonRef }: WheelProps) {
                 >
                     <span className='spin__face'>
                         <img
-                            src={asset('wheel/center.png')}
+                            src={asset('wheel/center.webp')}
                             alt=''
                             draggable={false}
                         />

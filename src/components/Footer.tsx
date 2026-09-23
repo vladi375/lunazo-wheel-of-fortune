@@ -6,7 +6,7 @@ export function Footer() {
             <div className='footer__content'>
                 <img
                     className='footer__logo'
-                    src={asset('shared/logo.png')}
+                    src={asset('shared/logo.webp')}
                     width={78}
                     height={14}
                     alt='Lunazo'

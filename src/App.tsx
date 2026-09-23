@@ -18,7 +18,7 @@ export function App({ variant }: { variant: Variant }) {
                         <header className='header'>
                             <img
                                 className='brand'
-                                src={asset('shared/logo.png')}
+                                src={asset('shared/logo.webp')}
                                 alt='Lunazo'
                                 width={209}
                                 height={37}
@@ -40,12 +40,14 @@ export function App({ variant }: { variant: Variant }) {
                                         <source
                                             media='(max-width: 900px)'
                                             srcSet={asset(
-                                                `landing-1/${name}-original.png`,
+                                                `landing-1/${name}-original.webp`,
                                             )}
                                         />
                                         <img
                                             className={`art art--${name}`}
-                                            src={asset(`landing-1/${name}.png`)}
+                                            src={asset(
+                                                `landing-1/${name}.webp`,
+                                            )}
                                             alt=''
                                             draggable={false}
                                         />
@@ -55,7 +57,7 @@ export function App({ variant }: { variant: Variant }) {
                                         key={name}
                                         className={`art art--${name}`}
                                         src={asset(
-                                            `landing-${variant}/${name}.png`,
+                                            `landing-${variant}/${name}.webp`,
                                         )}
                                         alt=''
                                         draggable={false}

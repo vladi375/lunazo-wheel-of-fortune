@@ -78,7 +78,7 @@ img {
     inset: 0;
     background:
         linear-gradient(#0008, transparent 40%),
-        url('/assets/landing-1/background.png') center / cover;
+        url('/assets/landing-1/background.webp') center / cover;
     z-index: -2;
 }
 .landing--1 .hero::before {
@@ -97,7 +97,7 @@ img {
 .landing--2 .hero::before {
     background:
         linear-gradient(180deg, #000b 0%, #0006 35%, #0005 65%, #0009 100%),
-        url('/assets/landing-2/background.png') center / cover no-repeat;
+        url('/assets/landing-2/background.webp') center / cover no-repeat;
 }
 .landing--2 .hero::after {
     background:
@@ -386,7 +386,7 @@ h1 span {
     flex: 0 0 auto;
     width: 3.2cqw;
     height: 3.2cqw;
-    background-image: url('/assets/landing-2/benefits.png');
+    background-image: url('/assets/landing-2/benefits.webp');
     background-size: 34.375cqw 3.1944cqw;
     background-repeat: no-repeat;
 }
@@ -459,8 +459,8 @@ h1 span {
     display: none;
     width: 171px;
     height: 33px;
-    background: url('/assets/shared/mobile-reference.png') -174px -819px / 402px
-        925px no-repeat;
+    background: url('/assets/shared/mobile-reference.webp') -174px -819px /
+        402px 925px no-repeat;
 }
 .footer__notice {
     grid-column: 1 / -1;
@@ -537,7 +537,7 @@ h1 span {
         linear-gradient(110deg, #f400ae, #a31cdb 48%, #1c67ff) border-box;
 }
 .win-card__prize--gift {
-    background: url('/assets/landing-2/popup-reference.png') -166px -42px /
+    background: url('/assets/landing-2/popup-reference.webp') -166px -42px /
         463px 380px no-repeat;
     mask-image: radial-gradient(ellipse, #000 53%, transparent 73%);
 }
@@ -805,7 +805,7 @@ h1 span {
         display: block;
         width: 9.45cqw;
         height: 100%;
-        background-image: url('/assets/landing-2/benefits.png');
+        background-image: url('/assets/landing-2/benefits.webp');
         background-size: 123.134cqw 11.443cqw;
         background-repeat: no-repeat;
         background-position: -1.523cqw 0;
