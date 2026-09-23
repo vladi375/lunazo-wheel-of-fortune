@@ -81,6 +81,9 @@ img {
         url('/assets/landing-1/background.png') center / cover;
     z-index: -2;
 }
+.landing--1 .hero::before {
+    filter: brightness(0.85);
+}
 .hero::after {
     content: '';
     position: absolute;
@@ -92,12 +95,14 @@ img {
         linear-gradient(0deg, #0002, transparent 20%, transparent 90%, #0008);
 }
 .landing--2 .hero::before {
-    background: radial-gradient(
-        ellipse at 50% 56%,
-        #4d005f,
-        #120313 60%,
-        #030106
-    );
+    background:
+        linear-gradient(180deg, #000b 0%, #0006 35%, #0005 65%, #0009 100%),
+        url('/assets/landing-2/background.png') center / cover no-repeat;
+}
+.landing--2 .hero::after {
+    background:
+        radial-gradient(ellipse at 50% 56%, #7500d94d, transparent 58%),
+        linear-gradient(0deg, #000 0%, transparent 18%, transparent 80%, #0004);
 }
 .scene {
     container-type: inline-size;
@@ -676,6 +681,11 @@ h1 span {
         background:
             linear-gradient(0deg, #000 0%, #0002 14%, transparent 55%),
             radial-gradient(ellipse at 50% 57%, #6400ff35, transparent 50%);
+    }
+    .landing--2 .hero::after {
+        background:
+            linear-gradient(0deg, #000 0%, #000b 8%, transparent 30%),
+            radial-gradient(ellipse at 50% 48%, #7500d94d, transparent 60%);
     }
     .header {
         top: 1.8519%;
