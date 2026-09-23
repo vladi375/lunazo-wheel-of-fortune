@@ -36,6 +36,24 @@ npm run preview
 Both the development server and preview use `localhost:5001`.
 To check types separately, run `npm run typecheck`.
 
+## GitHub Pages
+
+The workflow in `.github/workflows/deploy.yml` checks types and builds the site
+on every pull request targeting `main`. Pushes to `main`, including merged pull
+requests, also deploy the build to GitHub Pages. The workflow can be started
+manually from the Actions tab; deployment is restricted to `main`.
+
+In the repository settings, select **Pages → Build and deployment → Source →
+GitHub Actions** before the first deployment. The `github-pages` environment
+must allow deployments from `main`.
+
+The workflow builds with the `/lunazo-wheel-of-fortune/` base path. Published URLs:
+
+- `https://vladi375.github.io/lunazo-wheel-of-fortune/landing-1/`
+- `https://vladi375.github.io/lunazo-wheel-of-fortune/landing-2/`
+
+Local development and the default `npm run build` retain the `/` base path.
+
 ## Project structure
 
 - `src/config.ts` — links and variant settings.
