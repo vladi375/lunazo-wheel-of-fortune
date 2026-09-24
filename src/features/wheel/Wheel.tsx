@@ -41,15 +41,27 @@ export function Wheel({ onResult, buttonRef }: WheelProps) {
         const rotor = rotorRef.current;
         if (!rotor || !controller.start()) return;
         setState('spinning');
-        // The winning sector begins under the fixed pointer. One full turn
-        // restores that position without rotating the central button or rim.
+
         const animation = rotor.animate(
-            [{ transform: 'rotate(0deg)' }, { transform: 'rotate(360deg)' }],
+            [
+                { transform: 'rotate(0deg)', offset: 0, easing: 'ease-out' },
+                {
+                    transform: 'rotate(1800deg)',
+                    offset: 0.8,
+                    easing: 'ease-out',
+                },
+                {
+                    transform: 'rotate(1795deg)',
+                    offset: 0.9,
+                    easing: 'ease-out',
+                },
+                { transform: 'rotate(1800deg)', offset: 1 },
+            ],
             {
                 duration: matchMedia('(prefers-reduced-motion: reduce)').matches
                     ? 0
-                    : 4000,
-                easing: 'cubic-bezier(.15,.65,.15,1)',
+                    : 6000,
+                easing: 'linear',
                 fill: 'forwards',
             },
         );
@@ -59,7 +71,7 @@ export function Wheel({ onResult, buttonRef }: WheelProps) {
         } catch {
             return;
         }
-        rotor.style.transform = 'rotate(360deg)';
+        rotor.style.transform = 'rotate(1800deg)';
         animation.cancel();
         animationRef.current = null;
         if (controller.finish()) {
