@@ -422,7 +422,7 @@ h1 span {
 .footer__logo {
     width: 78px;
     height: auto;
-    filter: grayscale(1) brightness(0.7);
+    filter: brightness(0) invert(46.27%);
 }
 .footer__links {
     display: flex;
@@ -663,6 +663,13 @@ h1 span {
 }
 
 @media (max-width: 900px) {
+    html {
+        scrollbar-gutter: auto;
+    }
+    .landing {
+        padding-bottom: max(0px, calc(100svh - 635px));
+        background: #000;
+    }
     .scene {
         width: min(100%, 540px);
         aspect-ratio: 402 / 810;
@@ -676,6 +683,18 @@ h1 span {
         transform: translateX(-50%);
         background-position: 50% 50%;
         background-size: cover;
+    }
+    .landing--1 .hero::before {
+        background:
+            linear-gradient(180deg, #000a 0%, #0007 10%, transparent 25%) center
+                top / 100% 100% no-repeat,
+            url('/assets/landing-1/background-mobile.png') center top / 100%
+                auto no-repeat;
+        filter: none;
+    }
+    .landing--2 .hero::before {
+        background: url('/assets/landing-2/background-mobile.png') center top /
+            100% auto no-repeat;
     }
     .hero::after {
         background:
@@ -818,7 +837,7 @@ h1 span {
         background-position: -85.56cqw 0;
     }
     .footer {
-        padding: 9px 16px 16px;
+        padding: 28px 16px 16px;
         min-height: 95px;
     }
     .footer__content {
