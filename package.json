@@ -5,6 +5,8 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
+        "dev:landing-1": "vite --mode landing-1 --port 5101",
+        "dev:landing-2": "vite --mode landing-2 --port 5102",
         "build": "tsc --noEmit && vite build",
         "build:sites": "npm run build && node tools/build-sites.mjs",
         "preview": "vite preview",

@@ -15,6 +15,16 @@ npm run dev
 - `http://localhost:5001/landing-2/` — landing page featuring a woman and a panther.
 - `/` — the first landing page.
 
+For separate development servers with live reload, start these commands in
+different terminals:
+
+```sh
+npm run dev:landing-1 # http://localhost:5101/
+npm run dev:landing-2 # http://localhost:5102/
+```
+
+`npm run dev` remains the combined development server on port 5001.
+
 ## Build and deployment
 
 ```sh
@@ -59,6 +69,9 @@ after `npm run build:sites`:
 npm run preview:landing-1 # http://localhost:5101/
 npm run preview:landing-2 # http://localhost:5102/
 ```
+
+Stop the dev servers before starting previews because each pair uses the same
+ports.
 
 The localhost ports are for local review. Domain routing and DNS are configured
 on the production hosts. Rebuild with `npm run build:sites` after source changes.
