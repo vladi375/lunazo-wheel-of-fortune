@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { asset, links, variants } from './config';
+import { asset, links, variants, withLandingQueryParams } from './config';
 import type { Variant } from './config';
 import { Wheel } from './features/wheel/Wheel';
 import { WinDialog } from './components/WinDialog';
@@ -23,7 +23,13 @@ export function App({ variant }: { variant: Variant }) {
                                 width={209}
                                 height={37}
                             />
-                            <a className='register' href={links.registration}>
+                            <a
+                                className='register'
+                                href={withLandingQueryParams(
+                                    links.registration,
+                                    window.location.search,
+                                )}
+                            >
                                 REGÍSTRATE
                             </a>
                         </header>

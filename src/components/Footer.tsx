@@ -1,4 +1,4 @@
-import { asset, links } from '../config';
+import { asset, links, withLandingQueryParams } from '../config';
 
 export function Footer() {
     return (
@@ -16,8 +16,22 @@ export function Footer() {
                     aria-label='Información y contacto'
                 >
                     <a href='mailto:support@lunazo.bet'>support@lunazo.bet</a>
-                    <a href={links.responsible}>Juego Responsable</a>
-                    <a href={links.privacy}>Política de Privacidad</a>
+                    <a
+                        href={withLandingQueryParams(
+                            links.responsible,
+                            window.location.search,
+                        )}
+                    >
+                        Juego Responsable
+                    </a>
+                    <a
+                        href={withLandingQueryParams(
+                            links.privacy,
+                            window.location.search,
+                        )}
+                    >
+                        Política de Privacidad
+                    </a>
                 </nav>
                 <div className='footer__badges'>
                     <span

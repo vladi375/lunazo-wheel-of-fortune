@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef } from 'react';
 import type { RefObject } from 'react';
-import { asset, links } from '../config';
+import { asset, links, withLandingQueryParams } from '../config';
 import type { Variant } from '../config';
 
 interface WinDialogProps {
@@ -89,7 +89,10 @@ export function WinDialog({
                 <a
                     className='win-card__claim'
                     ref={claimRef}
-                    href={links.bonus}
+                    href={withLandingQueryParams(
+                        links.bonus,
+                        window.location.search,
+                    )}
                 >
                     {variant === '1' ? '¡OBTÉN TU BONO!' : '¡DALE, LO QUIERO!'}
                 </a>

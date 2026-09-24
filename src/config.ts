@@ -7,6 +7,19 @@ export const links = {
     privacy: 'https://lunazo.bet/es/privacy',
 } as const;
 
+export function withLandingQueryParams(
+    destination: string,
+    landingSearch: string,
+): string {
+    if (!landingSearch) return destination;
+
+    const url = new URL(destination);
+    new URLSearchParams(landingSearch).forEach((value, key) => {
+        url.searchParams.append(key, value);
+    });
+    return url.toString();
+}
+
 export const variants = {
     '1': {
         headline: ['¿HOY ES TU NOCHE DE SUERTE?', '¡GIRA Y DESCÚBRELO!'],

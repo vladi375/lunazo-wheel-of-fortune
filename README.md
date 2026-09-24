@@ -36,6 +36,34 @@ npm run preview
 Both the development server and preview use `localhost:5001`.
 To check types separately, run `npm run typecheck`.
 
+## Separate domains
+
+Keep one shared codebase and generate two standalone site folders:
+
+```sh
+npm run build:sites
+```
+
+- Upload the **contents** of `deploy/landing-1/` to the root of the first domain.
+- Upload the **contents** of `deploy/landing-2/` to the root of the second domain.
+
+Each folder contains its own root `index.html`, shared assets, and only its
+variant's images. The pages therefore load at `/` on their respective domains;
+no `/landing-1/` or `/landing-2/` URL path is needed. Configure each domain to
+serve its folder as the site root.
+
+To preview both standalone builds locally, run these in separate terminals
+after `npm run build:sites`:
+
+```sh
+npm run preview:landing-1 # http://localhost:5101/
+npm run preview:landing-2 # http://localhost:5102/
+```
+
+The localhost ports are for local review. Domain routing and DNS are configured
+on the production hosts. Rebuild with `npm run build:sites` after source changes.
+The existing combined build and GitHub Pages workflow remain available.
+
 ## GitHub Pages
 
 The workflow in `.github/workflows/deploy.yml` checks types and builds the site

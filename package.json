@@ -6,7 +6,11 @@
     "scripts": {
         "dev": "vite",
         "build": "tsc --noEmit && vite build",
+        "build:sites": "npm run build && node tools/build-sites.mjs",
         "preview": "vite preview",
+        "preview:landing-1": "vite preview --outDir deploy/landing-1 --port 5101",
+        "preview:landing-2": "vite preview --outDir deploy/landing-2 --port 5102",
+        "test": "node --test checks/*.mjs",
         "typecheck": "tsc --noEmit"
     },
     "engines": {
