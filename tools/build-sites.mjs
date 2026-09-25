@@ -18,6 +18,15 @@ for (const variant of ['1', '2']) {
         join(site, 'index.html'),
     );
 
+    for (const icon of [
+        'favicon.ico',
+        'favicon-16x16.png',
+        'favicon-32x32.png',
+        'apple-touch-icon.png',
+    ]) {
+        await cp(join(build, icon), join(site, icon));
+    }
+
     for (const entry of assetEntries) {
         if (entry.isFile()) {
             await cp(join(assets, entry.name), join(siteAssets, entry.name));
