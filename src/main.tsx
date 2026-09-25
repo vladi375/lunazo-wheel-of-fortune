@@ -4,7 +4,7 @@ import { App } from './App';
 import './styles.css';
 
 const routeVariant = window.location.pathname.match(
-    /\/landing-(1|2)(?:\/index\.html|\/)?$/,
+    /\/wheel-v(1|2)(?:\/index\.html|\/)?$/,
 )?.[1];
 const variant =
     (routeVariant ?? document.body.dataset.variant) === '2' ? '2' : '1';

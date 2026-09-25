@@ -66,7 +66,7 @@ export function WinDialog({
                 {variant === '1' ? (
                     <img
                         className='win-card__prize'
-                        src={asset('landing-1/popup-dynamite.webp')}
+                        src={asset('wheel-v1/popup-dynamite.webp')}
                         alt=''
                     />
                 ) : (

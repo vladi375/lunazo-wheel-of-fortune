@@ -46,14 +46,12 @@ export function App({ variant }: { variant: Variant }) {
                                         <source
                                             media='(max-width: 900px)'
                                             srcSet={asset(
-                                                `landing-1/${name}-original.webp`,
+                                                `wheel-v1/${name}-original.webp`,
                                             )}
                                         />
                                         <img
                                             className={`art art--${name}`}
-                                            src={asset(
-                                                `landing-1/${name}.webp`,
-                                            )}
+                                            src={asset(`wheel-v1/${name}.webp`)}
                                             alt=''
                                             draggable={false}
                                         />
@@ -63,7 +61,7 @@ export function App({ variant }: { variant: Variant }) {
                                         key={name}
                                         className={`art art--${name}`}
                                         src={asset(
-                                            `landing-${variant}/${name}.webp`,
+                                            `wheel-v${variant}/${name}.webp`,
                                         )}
                                         alt=''
                                         draggable={false}

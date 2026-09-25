@@ -5,13 +5,13 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "dev:landing-1": "vite --mode landing-1 --port 5101",
-        "dev:landing-2": "vite --mode landing-2 --port 5102",
+        "dev:wheel-v1": "vite --mode wheel-v1 --port 5101",
+        "dev:wheel-v2": "vite --mode wheel-v2 --port 5102",
         "build": "tsc --noEmit && vite build",
         "build:sites": "npm run build && node tools/build-sites.mjs",
         "preview": "vite preview",
-        "preview:landing-1": "vite preview --outDir deploy/landing-1 --port 5101",
-        "preview:landing-2": "vite preview --outDir deploy/landing-2 --port 5102",
+        "preview:wheel-v1": "vite preview --outDir deploy/wheel-v1 --port 5101",
+        "preview:wheel-v2": "vite preview --outDir deploy/wheel-v2 --port 5102",
         "test": "node --test checks/*.mjs",
         "typecheck": "tsc --noEmit"
     },

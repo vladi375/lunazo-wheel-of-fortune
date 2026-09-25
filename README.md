@@ -11,16 +11,16 @@ npm ci
 npm run dev
 ```
 
-- `http://localhost:5001/landing-1/` — landing page featuring Zeus.
-- `http://localhost:5001/landing-2/` — landing page featuring a woman and a panther.
+- `http://localhost:5001/wheel-v1/` — landing page featuring Zeus.
+- `http://localhost:5001/wheel-v2/` — landing page featuring a woman and a panther.
 - `/` — the first landing page.
 
 For separate development servers with live reload, start these commands in
 different terminals:
 
 ```sh
-npm run dev:landing-1 # http://localhost:5101/
-npm run dev:landing-2 # http://localhost:5102/
+npm run dev:wheel-v1 # http://localhost:5101/
+npm run dev:wheel-v2 # http://localhost:5102/
 ```
 
 `npm run dev` remains the combined development server on port 5001.
@@ -54,20 +54,20 @@ Keep one shared codebase and generate two standalone site folders:
 npm run build:sites
 ```
 
-- Upload the **contents** of `deploy/landing-1/` to the root of the first domain.
-- Upload the **contents** of `deploy/landing-2/` to the root of the second domain.
+- Upload the **contents** of `deploy/wheel-v1/` to the root of the first domain.
+- Upload the **contents** of `deploy/wheel-v2/` to the root of the second domain.
 
 Each folder contains its own root `index.html`, shared assets, and only its
 variant's images. The pages therefore load at `/` on their respective domains;
-no `/landing-1/` or `/landing-2/` URL path is needed. Configure each domain to
+no `/wheel-v1/` or `/wheel-v2/` URL path is needed. Configure each domain to
 serve its folder as the site root.
 
 To preview both standalone builds locally, run these in separate terminals
 after `npm run build:sites`:
 
 ```sh
-npm run preview:landing-1 # http://localhost:5101/
-npm run preview:landing-2 # http://localhost:5102/
+npm run preview:wheel-v1 # http://localhost:5101/
+npm run preview:wheel-v2 # http://localhost:5102/
 ```
 
 Stop the dev servers before starting previews because each pair uses the same
@@ -90,8 +90,8 @@ must allow deployments from `main`.
 
 The workflow builds with the `/lunazo-wheel-of-fortune/` base path. Published URLs:
 
-- `https://vladi375.github.io/lunazo-wheel-of-fortune/landing-1/`
-- `https://vladi375.github.io/lunazo-wheel-of-fortune/landing-2/`
+- `https://vladi375.github.io/lunazo-wheel-of-fortune/wheel-v1/`
+- `https://vladi375.github.io/lunazo-wheel-of-fortune/wheel-v2/`
 
 Local development and the default `npm run build` retain the `/` base path.
 
@@ -103,7 +103,7 @@ Local development and the default `npm run build` retain the `/` base path.
 - `src/components/` — prize popup and footer.
 - `src/styles.css` — styles and responsive layout.
 - `public/assets/` — images, local fonts, and their licenses.
-- `landing-1/`, `landing-2/` — HTML entry points.
+- `wheel-v1/`, `wheel-v2/` — HTML entry points.
 
 The wheel spins once per page load and stops at `300% + 40 GG`.
 A popup appears after the spin; clicking again reopens the result without

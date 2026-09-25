@@ -3,10 +3,10 @@ import type { Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
-    const devVariant = mode === 'landing-1' || mode === 'landing-2' ? mode : null;
-    const landingRootPlugin: Plugin | null = devVariant
+    const devVariant = mode === 'wheel-v1' || mode === 'wheel-v2' ? mode : null;
+    const variantRootPlugin: Plugin | null = devVariant
         ? {
-              name: 'landing-at-root',
+              name: 'wheel-variant-at-root',
               configureServer(server) {
                   server.middlewares.use((request, _response, next) => {
                       const devRequest = request as { url?: string };
@@ -21,15 +21,15 @@ export default defineConfig(({ mode }) => {
         : null;
 
     return {
-        plugins: [react(), ...(landingRootPlugin ? [landingRootPlugin] : [])],
+        plugins: [react(), ...(variantRootPlugin ? [variantRootPlugin] : [])],
         server: { host: 'localhost', port: 5001, strictPort: true },
         preview: { host: 'localhost', port: 5001, strictPort: true },
         build: {
             rollupOptions: {
                 input: {
                     index: 'index.html',
-                    landing1: 'landing-1/index.html',
-                    landing2: 'landing-2/index.html',
+                    wheelV1: 'wheel-v1/index.html',
+                    wheelV2: 'wheel-v2/index.html',
                 },
             },
         },

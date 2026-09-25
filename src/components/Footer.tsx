@@ -6,7 +6,7 @@ export function Footer() {
             <div className='footer__content'>
                 <img
                     className='footer__logo'
-                    src={asset('shared/logo.webp')}
+                    src={asset('shared/footer-lunazo.svg')}
                     width={78}
                     height={14}
                     alt='Lunazo'
@@ -38,13 +38,45 @@ export function Footer() {
                         className='payments'
                         role='img'
                         aria-label='Bank Transfer, Mercado Pago, Naranja X, AstroPay, USDT'
-                    />
-                    <span
-                        className='age'
-                        aria-label='Solo para mayores de 18 años'
                     >
-                        18+
+                        <img
+                            src={asset('shared/bank-transfer.svg')}
+                            alt=''
+                            width={20}
+                            height={33}
+                        />
+                        <img
+                            src={asset('shared/mercado-pago.svg')}
+                            alt=''
+                            width={26}
+                            height={33}
+                        />
+                        <img
+                            src={asset('shared/naranja-x.svg')}
+                            alt=''
+                            width={37}
+                            height={33}
+                        />
+                        <img
+                            src={asset('shared/astropay.svg')}
+                            alt=''
+                            width={37}
+                            height={33}
+                        />
+                        <img
+                            src={asset('shared/tether.svg')}
+                            alt=''
+                            width={35}
+                            height={33}
+                        />
                     </span>
+                    <img
+                        className='age'
+                        src={asset('shared/age-18.svg')}
+                        alt='Solo para mayores de 18 años'
+                        width={27}
+                        height={27}
+                    />
                 </div>
                 <p className='footer__notice'>
                     IMPORTANTE: TODOS LOS MONTOS DE BONIFICACIÓN SE MUESTRAN EN
