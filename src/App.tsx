@@ -1,18 +1,18 @@
 import { useRef, useState } from 'react';
 import { asset, links, variants, withLandingQueryParams } from './config';
-import type { Variant } from './config';
+import type { Country, Variant } from './config';
 import { Wheel } from './features/wheel/Wheel';
 import { WinDialog } from './components/WinDialog';
 import { Footer } from './components/Footer';
 
-export function App({ variant }: { variant: Variant }) {
+export function App({ variant, country }: { variant: Variant; country: Country }) {
     const config = variants[variant];
     const [resultOpen, setResultOpen] = useState(false);
     const buttonRef = useRef<HTMLButtonElement>(null);
 
     return (
         <>
-            <main className={`landing landing--${variant}`}>
+            <main className={`landing landing--${variant}`} data-country={country}>
                 <section className='hero' aria-labelledby='headline'>
                     <div className='scene'>
                         <header className='header'>

@@ -3,8 +3,15 @@ import type { Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
-    const devVariant = mode === 'wheel-v1' || mode === 'wheel-v2' ? mode : null;
-    const variantRootPlugin: Plugin | null = devVariant
+    const devSite = [
+        'wheel-v1-co',
+        'wheel-v1-ar',
+        'wheel-v2-co',
+        'wheel-v2-ar',
+    ].includes(mode)
+        ? mode
+        : null;
+    const variantRootPlugin: Plugin | null = devSite
         ? {
               name: 'wheel-variant-at-root',
               configureServer(server) {
@@ -12,7 +19,7 @@ export default defineConfig(({ mode }) => {
                       const devRequest = request as { url?: string };
                       const url = devRequest.url;
                       if (url && (url === '/' || url.startsWith('/?'))) {
-                          devRequest.url = `/${devVariant}/${url.slice(1)}`;
+                          devRequest.url = `/${devSite}/${url.slice(1)}`;
                       }
                       next();
                   });
@@ -21,6 +28,7 @@ export default defineConfig(({ mode }) => {
         : null;
 
     return {
+        base: mode === 'gitlab' ? '/lunazo/dist/' : '/',
         plugins: [react(), ...(variantRootPlugin ? [variantRootPlugin] : [])],
         server: { host: 'localhost', port: 5001, strictPort: true },
         preview: { host: 'localhost', port: 5001, strictPort: true },
@@ -28,8 +36,10 @@ export default defineConfig(({ mode }) => {
             rollupOptions: {
                 input: {
                     index: 'index.html',
-                    wheelV1: 'wheel-v1/index.html',
-                    wheelV2: 'wheel-v2/index.html',
+                    wheelV1Co: 'wheel-v1-co/index.html',
+                    wheelV1Ar: 'wheel-v1-ar/index.html',
+                    wheelV2Co: 'wheel-v2-co/index.html',
+                    wheelV2Ar: 'wheel-v2-ar/index.html',
                 },
             },
         },

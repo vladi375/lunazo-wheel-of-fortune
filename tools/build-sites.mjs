@@ -7,14 +7,19 @@ const build = join(root, 'dist');
 const assets = join(build, 'assets');
 const assetEntries = await readdir(assets, { withFileTypes: true });
 
-for (const variant of ['1', '2']) {
-    const site = join(root, 'deploy', `wheel-v${variant}`);
+for (const { name, variant } of [
+    { name: 'wheel-v1-co', variant: '1' },
+    { name: 'wheel-v1-ar', variant: '1' },
+    { name: 'wheel-v2-co', variant: '2' },
+    { name: 'wheel-v2-ar', variant: '2' },
+]) {
+    const site = join(root, 'deploy', name);
     const siteAssets = join(site, 'assets');
 
     await rm(site, { recursive: true, force: true });
     await mkdir(siteAssets, { recursive: true });
     await cp(
-        join(build, `wheel-v${variant}`, 'index.html'),
+        join(build, name, 'index.html'),
         join(site, 'index.html'),
     );
 
@@ -39,5 +44,5 @@ for (const variant of ['1', '2']) {
         });
     }
 
-    console.log(`Built deploy/wheel-v${variant}/`);
+    console.log(`Built deploy/${name}/`);
 }
